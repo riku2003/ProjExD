@@ -1,7 +1,7 @@
 import tkinter as tk
 import maze_maker as mm
-import random 
 import tkinter.messagebox as tkm
+from random import randint
 
 def key_down(event):
     global key
@@ -40,12 +40,11 @@ if __name__=="__main__":
     canvas = tk.Canvas(root,width=1500,height=900,bg="black")
     canvas.pack()
 
-    lst = ["fig/0.png", "fig/1.png", "fig/2.png", "fig/3.png", "fig/4.png", "fig/5.png", "fig/6.png", "fig/7.png", "fig/8.png", "fig/9.png"] # こうかとんの画像のリスト
     maze_lst = mm.make_maze(15, 9)
     # print(maze_lst)
     mm.show_maze(canvas, maze_lst)
     
-    tori = tk.PhotoImage(file=random.choice(lst)) # 実行する毎にこうかとんの画像がlstからランダムに選ばれる
+    tori = tk.PhotoImage(file= f"fig/{randint(0,9)}.png") # 実行する毎にこうかとんの画像がlstからランダムに選ばれる
     mx, my = 1, 1
     cx, cy = mx*100+50, my*100+50
     canvas.create_image(cx, cy, image=tori, tag="kokaton")
