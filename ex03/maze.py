@@ -31,7 +31,6 @@ def main_proc():
             mx += 1
             tkm.askquestion("enterで終了","そこ壁だから")
     cx, cy = mx*100+50, my*100+50
-
     canvas.coords("kokaton", cx, cy)
     root.after(100, main_proc)
 
@@ -42,7 +41,6 @@ if __name__=="__main__":
     canvas.pack()
 
     lst = ["fig/0.png", "fig/1.png", "fig/2.png", "fig/3.png", "fig/4.png", "fig/5.png", "fig/6.png", "fig/7.png", "fig/8.png", "fig/9.png"] # こうかとんの画像のリスト
-
     maze_lst = mm.make_maze(15, 9)
     # print(maze_lst)
     mm.show_maze(canvas, maze_lst)
@@ -55,5 +53,4 @@ if __name__=="__main__":
     root.bind("<KeyPress>",key_down)
     root.bind("<KeyRelease>",key_up)
     main_proc()
-
     root.mainloop()
