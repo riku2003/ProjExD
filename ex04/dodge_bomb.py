@@ -96,8 +96,6 @@ def main():
         vx *= yoko
         vy *= tate
 
-        
-
         if tori_rct.colliderect(bomb_rct):
             return
         
