@@ -3,7 +3,6 @@ import sys
 import random
 
 a = 10
-
 def check_bound(obj_rct, scr_rct):
     #第1引数：こうかとんrectまたは爆弾rect
     #第2引数：スクリーンrect
@@ -79,13 +78,13 @@ def main():
             big_bool = True
             a += 0.1
             next_c = bomb_rct.center
-            bomb_sfc = pg.Surface((a*2, a*2))
+            bomb_sfc = pg.Surface((a*2, a*2)) #壁にあたるたびに爆弾が大きくなる
             bomb_sfc.set_colorkey((0, 0, 0))
             pg.draw.circle(bomb_sfc, (255, 0, 0), (a, a), a)
             bomb_rct = bomb_sfc.get_rect()
             bomb_rct.center = next_c
-            vx += 1
-            vy += 1
+            vx += 1 #vxの増加によって速度が増加する
+            vy += 1 #vyの増加によって速度が増加する
 
         elif (yoko, tate) == (1, 1):
             big_bool = False
