@@ -1,6 +1,7 @@
 import pygame as pg
 import random
 import sys
+
 import pygame.mixer
 import time
 
@@ -114,7 +115,7 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 return
-                
+
         kkt.update(scr)
         for i in range(5):
             bkd_lst[i].update(scr)
