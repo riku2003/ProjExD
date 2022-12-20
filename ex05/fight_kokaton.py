@@ -65,7 +65,6 @@ class Bomb:
     def blit(self, scr:Screen):
         scr.sfc.blit(self.sfc, self.rct)
 
-
     def update(self, scr:Screen):
         self.rct.move_ip(self.vx, self.vy)
         yoko, tate = check_bound(self.rct, scr.rct)
@@ -115,8 +114,7 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 return
-
-
+                
         kkt.update(scr)
         for i in range(5):
             bkd_lst[i].update(scr)
